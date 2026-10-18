@@ -44,6 +44,7 @@ public class AlunoController {
     }
 
     @PutMapping
+    @Transactional
     public void atualizar(@RequestBody DadosAtualizacaoAluno dados) {
         var aluno = repository.getReferenceById(dados.id());
         aluno.atualizarInformacoes(dados);
@@ -55,3 +56,5 @@ public class AlunoController {
         repository.deleteById(id);
     }
 }
+
+
